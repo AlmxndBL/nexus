@@ -1,0 +1,12 @@
+# Obsidian workspace (personal UI state, not content)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/community-plugins.json
+.obsidian/plugins/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Graphify cache (generated)
+Graphs/*/graphify-out/
