@@ -1,12 +1,35 @@
-# Obsidian workspace (personal UI state, not content)
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/community-plugins.json
-.obsidian/plugins/
+# ==========================================
+# 🔒 Private Personal Memory & Vault Data (Keep Local)
+# ==========================================
+Sessions/
+Projects/
+Decisions/
+Shared/
+Knowledge/
+*.private.md
 
-# OS
+# ==========================================
+# 🛡️ Environment & Secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ==========================================
+# 📦 Dependencies & Build Artifacts
+# ==========================================
+node_modules/
+dist/
+.output/
+.nuxt/
+
+# ==========================================
+# 💻 OS & Obsidian Cache
+# ==========================================
 .DS_Store
 Thumbs.db
-
-# Graphify cache (generated)
-Graphs/*/graphify-out/
+*.log
+.obsidian/workspace*
+.obsidian/cache/

@@ -1,108 +1,55 @@
-# Project_X — Persistent Memory System for AI Coding Agents
+# 🏛️ Nexus 2.0 — Active Personal Engineering OS & Memory Vault
 
-Turn any coding session into a searchable, linked graph of knowledge. Built on Obsidian + Markdown.
+> **Personal Context, Project Hub, Decision Memory & Knowledge OS for Jack (StxrFxll)**
+> ควบคุมและทำงานร่วมกับ **`agent_skill`** ผ่านสถาปัตยกรรม 3-Tier และ Universal MCP Bridge
 
-## What It Does
+---
 
-- **Remembers across sessions** — context persists even when you close the terminal
-- **Links everything** — sessions → projects → decisions → code (via wikilinks)
-- **Queryable** — find past work with Obsidian search + Dataview queries
-- **Visual** — Obsidian graph view shows all connections at once
-- **Zero dependencies** — plain Markdown, works offline
+## 📌 โครงสร้างระบบ (System Architecture)
 
-## Tech Stack
-
-| Layer | Tech | Role |
-|-------|------|------|
-| Storage | Obsidian Vault (Markdown) | All notes, templates, links |
-| AI Agent | OpenCode / Claude Code | Reads context at start, writes summary at end |
-| Search | Dataview + Obsidian Search | Dynamic queries across vault |
-| Graph | Obsidian Graph View + Graphify (optional) | Interactive visual graph |
-
-## Directory Structure
-
-```
-Project_X/
-├── _index.md                    # Master dashboard (injected into every session)
-├── _settings.md                 # System configuration
-├── _changelog.md                # System evolution log
-├── CLAUDE.md                    # AI instructions (copy to ~/.claude/)
-├── Templates/                   # Note templates (5 templates)
-├── Sessions/                    # 1 file per coding session
-├── Projects/                    # 1 file per project
-├── Decisions/                   # Key architectural decisions
-├── Knowledge/                   # Curated knowledge base
-│   ├── Architecture/
-│   ├── Patterns/
-│   ├── Tools/
-│   └── References/
-├── Daily/                       # Daily stand-up logs
-├── Graphs/                      # Knowledge graph exports (optional)
-└── Attachments/                 # Screenshots, PDFs, binaries
+```text
+Nexus/
+├── _index.md                  # Quick Dashboard & Current Focus
+├── AGENTS.md                  # Master Agent Operating Rules
+├── CLAUDE.md                  # System Constitution & Engineering Standards
+├── USER.md                    # Owner Preferences & Personal Tone
+├── Vault Structure Map.md     # แผนผังและขอบเขตหน้าที่ของโฟลเดอร์
+│
+├── bridge/                    # 🚀 Nexus 2.0 Engine & MCP Server (Node.js + TS)
+│   ├── src/core/compiler.ts   # 🎯 JIT Context Compiler
+│   ├── src/core/checkpoint.ts # 🔄 Closed-Loop Memory Engine
+│   ├── src/core/synthesizer.ts# 🧬 Cross-Project Pattern Synthesizer
+│   └── src/mcp-server.ts      # 🔌 Universal MCP Server
+│
+├── Decisions/                 # 3 ADRs (บันทึกการตัดสินใจทางสถาปัตยกรรม)
+├── Knowledge/                 # เอกสารสถาปัตยกรรม (Architecture) และงานวิจัย (Research)
+├── Projects/                  # บรีฟและสถานะแต่ละโปรเจกต์ (SaiJai-Phareab, Finance Tracker ฯลฯ)
+├── Sessions/                  # ประวัติการทำงานย้อนหลัง (Action-First Session Logs)
+├── Shared/                    # ข้อมูลส่วนกลาง (Operating State, Task Queue, User Memory)
+├── Skills/                    # คลัง Skill
+└── Templates/                 # แม่แบบเอกสารมาตรฐาน
 ```
 
-## How It Works
+---
 
-### Session Start
-1. AI reads `_index.md` → gets active projects, recent sessions, key decisions
-2. AI knows context automatically — no need to re-explain
+## ⚡ 4 เสาหลักของ Nexus 2.0
 
-### During Session
-- `/save-session` — checkpoint mid-session
-- `/memory-status` — see current vault state
-- `/save-decision "title"` — quick decision capture
+1. **🔌 Universal MCP Server:** เชื่อมต่อ Vault เข้ากับ Cursor, Claude Code, Google Antigravity ผ่าน MCP Tools 5 ตัว (`nexus_get_state`, `nexus_get_project_brief`, `nexus_save_session`, `nexus_record_decision`, `nexus_synthesize_pattern`)
+2. **🔄 Closed-Loop Memory:** บันทึก Session log และอัปเดตสถานะงานจาก Git Diff โดยอัตโนมัติ
+3. **🎯 JIT Context Compiler:** รวบรวมบริบทโปรเจกต์ + ADRs + Stack เป็น High-Density Prompt ภายใน 1 วินาที
+4. **🧬 Cross-Project Pattern Synthesizer:** สกัดโค้ดจริงที่ทดสอบผ่านแล้ว ส่งเข้าเป็น Reusable Blueprints ใน `agent_skill/templates/blueprints/`
 
-### Session End
-1. AI writes session note to `Sessions/YYYY-MM-DD-HHmm-slug.md`
-2. Updates `Projects/<project>.md` with latest summary
-3. Creates `Decisions/` if any decisions were made
-4. Updates `_index.md` recent sessions
+---
 
-## Getting Started
+## 🚀 Quick Commands
 
-### 1. Clone this repo
 ```bash
-git clone <repo-url> ~/work/Project_X
+# ตรวจสอบสถานะและงานค้าง
+node bridge/dist/cli.js status
+
+# เสิร์ฟบริบทโปรเจกต์ SaiJai แบบกระชับ
+node bridge/dist/cli.js brief SaiJai-Phareab
+
+# บันทึก Checkpoint จบงาน
+node bridge/dist/cli.js checkpoint [Project] "[Summary]"
 ```
-
-### 2. Install CLAUDE.md instructions
-```bash
-mkdir -p ~/.claude
-cp ~/work/Project_X/CLAUDE.md ~/.claude/CLAUDE.md
-```
-Edit the file — replace `{{VAULT_PATH}}` with your vault path.
-
-### 3. Open in Obsidian
-Open `~/work/Project_X` as a vault.
-
-### 4. Install Recommended Obsidian Plugins
-- **Dataview** — dynamic queries in _index.md
-- **Templater** — auto-fill `{{date}}`, `{{time}}`, `{{title}}`
-
-### 5. Start coding
-Just use your AI coding agent. It reads `_index.md` for context automatically.
-
-## Commands Reference
-
-| Command | What It Does |
-|---------|-------------|
-| `/save-session` | Write session checkpoint |
-| `/memory-status` | Show vault state (projects, sessions) |
-| `/save-decision "X"` | Quick decision capture |
-
-## Design Principles
-
-- **Plain text always** — every file is readable without tools
-- **Wikilinks everywhere** — sessions, projects, decisions all linked
-- **No external dependencies** — works offline, no databases, no servers
-- **Obsidian as UI** — graph view, search, and plugins for free
-- **Portable** — copy the folder, you have everything
-
-## First Session
-
-After setup, your first session will:
-1. AI reads `_index.md` — sees empty state, ready for new project
-2. You work normally
-3. On goodbye → AI writes first session note, updates everything
-
-Memory accrues session by session. Give it 5-10 sessions and you'll have a searchable history of every decision, fix, and discovery.

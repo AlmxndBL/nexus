@@ -3,11 +3,21 @@ tags: [system, index]
 auto_update: true
 ---
 
-# Project_X — Memory System Index
+# Nexus — Personal Context & Knowledge Vault
 
-> Auto-injected into every AI coding session via CLAUDE.md
+> **Single Source of Truth:** `[[Shared/AI-Context-Index]]`
+> **Master Agent Rules:** `AGENTS.md` (4-Step Engineering Workflow & Action-First Persona)
 
-## Active Projects
+---
+
+## 🚀 Active Projects
+
+- [[Projects/SaiJai-Phareab|SaiJai-Phareab]] — Laundry storefront SaaS (Nuxt 4 + LINE Bot + Prisma)
+- [[Projects/personal-finance-tracker|Personal Finance Tracker]] — React Bento Grid + Fastify + Supabase
+- [[Projects/claude-mem|claude-mem]] — Persistent memory plugin (v13.4.0)
+- [[Projects/Project_Y/_Index|Project_Y]] — Stock support/resistance web app (Nuxt + Express + Supabase)
+- [[Projects/Nuxt-App|Nuxt-App]] — Nuxt 4 + Vue 3.5 + TailwindCSS 4
+- [[Projects/y|y (Next.js)]] — Next.js 15 + React 19 + TailwindCSS 4
 
 ```dataview
 TABLE status, stack, created
@@ -16,7 +26,18 @@ WHERE status = "active"
 SORT created DESC
 ```
 
-## Recent Sessions
+---
+
+## 📋 Task & State Quick Access
+
+- 🎯 **Current Focus:** `[[Shared/Operating-State/current-state]]`
+- 📋 **Task Queue:** `[[Shared/Task-Queue/current-tasks]]`
+- 👤 **Owner Preferences:** `[[Shared/User-Memory/user-preferences]]`
+- 🛡️ **Protected Facts:** `[[Shared/Core-Facts/protected-facts]]`
+
+---
+
+## 🕒 Recent Sessions
 
 ```dataview
 TABLE project, summary, date
@@ -25,39 +46,21 @@ SORT date DESC
 LIMIT 10
 ```
 
-## Key Decisions (Last 30 Days)
+---
 
-```dataview
-TABLE status, date
-FROM "Decisions"
-WHERE date > date(today) - dur(30 days)
-SORT date DESC
-```
+## 🏛️ Vault Navigation
 
-## Today's Tasks
-
-```dataview
-TASK
-FROM "Daily"
-WHERE !completed AND date = date(today)
-```
+| โฟลเดอร์ | หน้าที่ |
+|---|---|
+| `Projects/` | ข้อมูลและสถานะของแต่ละโปรเจกต์ |
+| `Sessions/` | บันทึกประวัติการทำงานย้อนหลัง (Action-first logs) |
+| `Knowledge/` | สถาปัตยกรรมระบบ (Architecture) และงานวิจัย (Research) |
+| `Decisions/` | บันทึกการตัดสินใจเชิงสถาปัตยกรรม (ADRs) |
+| `Shared/` | ข้อมูลระบบส่วนกลาง (Current State, Tasks, User Memory) |
+| `Skills/` | การตั้งค่าและอ้างอิงสกิล AI |
+| `Templates/` | แม่แบบเอกสารมาตรฐาน |
 
 ---
 
-## Current State (session-end dump)
-
-**Active Projects:**
-- (None yet — create your first project with `Projects/` template)
-
-**Last Session:**
-- (None yet — your first session will appear here)
-
----
-
-## Quick Links
-
-- [[_settings|System Settings]]
-- [[_changelog|Changelog]]
-- [[Templates/|Templates]]
-- [[Projects/|Projects]]
-- [[Knowledge/|Knowledge Base]]
+## 💡 Knowledge Graph
+- **Vault Graph:** `/graphify "." --obsidian --obsidian-dir "Graphs\nexus"`

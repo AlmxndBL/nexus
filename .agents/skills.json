@@ -1,0 +1,9 @@
+{
+  "path": "${NEXUS_SKILLS_PATH}",
+  "links": [
+    "https://github.com/mattpocock/skills",
+    "https://github.com/jirayu-ct-dev/9arm-skills",
+    "https://github.com/multica-ai/andrej-karpathy-skills"
+  ],
+  "exclude": []
+}

@@ -1,0 +1,39 @@
+---
+tags: [index, moc, templates]
+note_type: moc
+created: {{DATE}}
+updated: {{DATE}}
+parent: "[[Home]]"
+---
+
+# Templates
+
+> แม่แบบโน้ต — instantiate จากที่นี่
+
+## ใส่ที่นี่
+template ไว้ instantiate (session/bug/handoff/project)
+
+## ไม่ใส่ที่นี่
+โน้ตจริง
+
+## Templates
+
+- [[Templates/session]] — session log หลังจบงานหรือ checkpoint สำคัญ
+- [[Templates/handoff]] — ส่งต่องานค้างให้ session/agent ถัดไป
+- [[Templates/project]] — project overview
+- [[Templates/bug]] — bug report
+- [[Templates/final]] — final gate เต็มก่อนบอกว่าเสร็จแล้ว; checklist ต้องมี evidence
+- [[Templates/final-lite]] — final gate แบบสั้นสำหรับงานเล็กถึงกลาง; ใช้เกณฑ์ evidence เดียวกัน
+
+## AI Routing Contract
+
+- ก่อนเขียน: เช็กว่าเนื้อหาตรง "ใส่ที่นี่" และไม่เข้า "ไม่ใส่ที่นี่"; ถ้าก้ำกึ่งอ่าน [[Vault Structure Map]] ก่อน
+- ก่อนสร้างไฟล์ใหม่: ค้นหาโน้ตเดิมในโฟลเดอร์นี้และโฟลเดอร์ใกล้เคียงก่อน เพื่อ merge/update แทน append ซ้ำ
+- เมื่อสร้างโน้ตในโฟลเดอร์นี้: ตั้ง `parent: "[[Templates/_Index]]"` และท้ายไฟล์ `up:: [[Templates/_Index]]`
+- หลังเขียน: เชื่อม link ไป source/project/session/decision ที่เกี่ยวข้อง และอัปเดต hub/index ถ้าโน้ตนี้ควรถูกค้นเจอในอนาคต
+
+> รายละเอียดทุกโฟลเดอร์ + decision rules → [[Vault Structure Map]]
+
+_(ยังว่าง — โน้ตในโฟลเดอร์นี้จะถูกลิงก์ที่นี่)_
+
+up:: [[Home]]

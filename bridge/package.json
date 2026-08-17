@@ -1,0 +1,23 @@
+{
+  "name": "nexus-bridge",
+  "version": "2.0.0",
+  "description": "Nexus 2.0: Active Personal Engineering OS & MCP Bridge",
+  "type": "module",
+  "bin": {
+    "nexus": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "mcp": "node dist/cli.js mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  }
+}
