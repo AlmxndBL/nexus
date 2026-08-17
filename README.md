@@ -93,4 +93,3 @@ node bridge/dist/mcp-server.js
 
 - **Master Agent Skill Rules:** 👉 [AlmxndBL/agent-skill](https://github.com/AlmxndBL/agent-skill)
 - **Nexus 2.0 Memory Vault:** 👉 [AlmxndBL/project-x-memory](https://github.com/AlmxndBL/project-x-memory)
-- **Developer Profile:** 👉 [AlmxndBL](https://github.com/AlmxndBL)
