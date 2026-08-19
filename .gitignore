@@ -5,7 +5,9 @@ Sessions/
 Projects/
 Decisions/
 Shared/
-Knowledge/
+Knowledge/*
+!Knowledge/Patterns/
+!Knowledge/Patterns/**
 *.private.md
 
 # ==========================================

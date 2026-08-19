@@ -1,0 +1,30 @@
+---
+tags: [knowledge, gotchas, stack/universal, ai/memory, agents]
+note_type: gotcha-collection
+stack: universal
+created: 2026-08-19
+updated: 2026-08-19
+parent: "[[Knowledge/Patterns/_Index]]"
+---
+
+# ⚠️ Gotchas: AI Agents, Memory & Tool Harness
+
+> รวมข้อควรระวังและ Best Practices ในการรัน AI Coding Agents, Persistent Memory (Nexus / Claude-mem / Graphify) และ Multi-agent Workflows
+
+---
+
+### 1. 🔒 Single-Committer Git Architecture
+- ❌ **ห้ามทำ:** อย่าให้ Agent หลายตัวที่รันขนานกันยิงคำสั่ง `git commit` หรือ `git push` เข้า Repo เดียวกันพร้อมกัน เพราะจะทำให้เกิด `.git/index.lock` ชนกันจนระบบค้าง
+- ✅ **วิธีที่ถูกต้อง:** ใช้ **Single-Committer Pattern** โดยให้ Agent เขียนไฟล์ลงไดเรกทอรีของตัวเอง แล้วให้ Process กลาง (Orchestrator / Main Process) เป็นผู้ Commit ข้อมูลเพียงผู้เดียว
+
+### 2. 🏷️ Session File Naming & Instant Scannability
+- ❌ **ห้ามทำ:** อย่าบันทึก Session ด้วยตัวเลข Timestamp ล้วน เช่น `202607101607.md` เพราะดูไม่ออกว่างานนั้นทำอะไร
+- ✅ **วิธีที่ถูกต้อง:** ใช้รูปแบบ `YYYY-MM-DD-HHmm-slug.md` (เช่น `2026-08-17-1653-implemented-admin-expense-mana.md`) พร้อมใส่ `summary` ใน Frontmatter เสมอ เพื่อให้สแกนหัวข้อง่ายใน 1 วินาที
+
+### 3. 🧠 Token Diet in Memory Recall
+- ❌ **ห้ามทำ:** อย่าโหลด Chat History หรือ Context ทั้งก้อนยัดใส่ Memory เพราะจะเปลือง Context Window และทำให้เกิด Hallucination
+- ✅ **วิธีที่ถูกต้อง:** สรุปบทเรียนเป็น **Micro-Lessons (3-4 บรรทัดต่อเรื่อง)** มีเฉพาะ Trigger, Anti-pattern, และ Golden Rule เท่านั้น
+
+### 4. 🌐 Graphify Knowledge Graph Hygiene
+- ❌ **ห้ามทำ:** อย่ารัน `/graphify` สแกนทั้งโฟลเดอร์ที่มี `node_modules`, `.git`, หรือ `dist/build`
+- ✅ **วิธีที่ถูกต้อง:** กำหนด Root Target เฉพาะโฟลเดอร์ `src/`, `server/`, `app/` หรือโฟลเดอร์ `Sessions/` เพื่อให้ได้ Knowledge Graph ที่สะอาดและมีแต่ความสัมพันธ์จริงของโค้ด

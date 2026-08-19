@@ -1,9 +1,9 @@
 # 🏛️ Nexus 2.0 — Active Personal Engineering OS & Memory Vault
 
-> **Personal Context, Project Hub, Decision Memory & Universal MCP Bridge**
-> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และระบบปฏิบัติการวิศวกรรมส่วนบุคคล ทำงานผสานรวมกับ [Master Agent Skill Rules](https://github.com/AlmxndBL/agent-skill)
+> **Personal Context, Project Hub, Cross-Project Gotchas & Universal MCP Bridge**
+> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Master Agent Skill Rules](https://github.com/AlmxndBL/agent-skill)
 
-![v2.0](https://img.shields.io/badge/v2.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![v2.3.0](https://img.shields.io/badge/v2.3.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ---
 
@@ -12,35 +12,40 @@
 Nexus 2.0 และ [agent-skill](https://github.com/AlmxndBL/agent-skill) ถูกออกแบบขึ้นคู่กันเพื่อสร้าง **Developer Productivity & AI Agent Framework** ระดับ Production-Ready:
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│       🤖 Developer Productivity & AI Agent Framework        │
-├──────────────────────────────┬──────────────────────────────┤
-│ 🏛️ Nexus 2.0 (Memory Vault) │ 🧠 Master Agent Skill Rules  │
-│ (Context & Engineering OS)   │ (Rules & Behavioral Engine)  │
-├──────────────────────────────┼──────────────────────────────┤
-│ • Cross-Project Memory Vault │ • 6 เสาหลักมาตรฐานวิศวกรรม   │
-│ • JIT Context Compiler       │ • Strict TS (Matt Pocock)    │
-│ • 5 MCP Tools เชื่อมทุก IDE │ • Universal Definition of Done│
-│ • บันทึก ADRs & Session Auto │ • 🛡️ Git Shield ป้องกันหลุด  │
-└──────────────────────────────┴──────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│         🤖 Developer Productivity & AI Agent Framework          │
+├────────────────────────────────┬────────────────────────────────┤
+│ 🏛️ Nexus 2.0 (Memory Vault)   │ 🧠 Master Agent Skill Rules    │
+│ (Context & Engineering Memory) │ (Rules & Behavioral Engine)    │
+├────────────────────────────────┼────────────────────────────────┤
+│ • Cross-Project Memory Vault   │ • 6 เสาหลักมาตรฐานวิศวกรรม     │
+│ • Stack-Aware Gotchas Library  │ • Strict TS (Matt Pocock)      │
+│ • JIT Context Compiler         │ • Universal Definition of Done  │
+│ • Universal MCP Tools (8 tools)│ • Closed-Loop Memory Protocols │
+│ • บันทึก ADRs & Session Auto   │ • 🛡️ Git Shield ป้องกันหลุด    │
+└────────────────────────────────┴────────────────────────────────┘
 ```
 
 - **`agent-skill`** ทำหน้าที่เป็น **สมองและกฎระเบียบ (The Rules Engine):** ควบคุมให้ AI เขียนโค้ดตามมาตรฐานความปลอดภัย, Strict TypeScript, Zero Fluff และมี Definition of Done
-- **`Nexus 2.0`** ทำหน้าที่เป็น **ความจำและระบบปฏิบัติการ (The Memory OS):** จัดเก็บสถานะโปรเจกต์, ประวัติการตัดสินใจ (ADRs), รวบรวมบริบทแบบ JIT, และเชื่อมต่อเข้ากับ AI IDE ผ่าน Universal MCP Server
+- **`Nexus 2.0`** ทำหน้าที่เป็น **ความจำและระบบปฏิบัติการ (The Memory OS):** จัดเก็บสถานะโปรเจกต์, ประวัติการตัดสินใจ (ADRs), คลังข้อควรระวังข้ามภาษา (Gotchas), และเชื่อมต่อเข้ากับ AI IDE ผ่าน Universal MCP Server
 
 ---
 
-## ⚡ 4 เสาหลักของ Nexus 2.0 (Core Pillars)
+## ⚡ 5 เสาหลักของ Nexus 2.0 (Core Pillars)
 
-1. **🔌 Universal MCP Server:** เชื่อมต่อ Memory Vault เข้ากับ Google Antigravity, Cursor, Claude Code, Windsurf ผ่าน MCP Tools 5 ตัว:
+1. **⚠️ Stack-Aware Gotchas Library (`Knowledge/Patterns/`):**
+   - คลังรวบรวมข้อควรระวังและบั๊กจริงที่สกัดจากประวัติการทำงาน (Nuxt 4, Prisma, Windows Dev, Security)
+   - ใช้ระบบ **Frontmatter Tagging** (`stack/nuxt4`, `stack/prisma`, `stack/universal`) เพื่อให้ AI โหลดเฉพาะกฎที่ตรงกับโปรเจกต์ ป้องกันปัญหา Context Contamination และไม่เปลือง Token
+2. **🔌 Universal MCP Server:** เชื่อมต่อ Memory Vault เข้ากับ Google Antigravity, Cursor, Claude Code, Windsurf ผ่าน MCP Tools:
    - `nexus_get_state` — ดึง Operating State ปัจจุบันและ Task Queue
    - `nexus_get_project_brief` — ดึง Context บรีฟของโปรเจกต์ที่ระบุในรูปแบบ High-Density
    - `nexus_save_session` — บันทึกประวัติ Session จบงานเข้า Vault
    - `nexus_record_decision` — บันทึก Architecture Decision Record (ADR)
    - `nexus_synthesize_pattern` — สกัด Production Blueprint ส่งเข้า `agent-skill`
-2. **🔄 Closed-Loop Memory Engine:** สแกน Git Diff และบันทึก Session Log + อัปเดตสถานะงานอัตโนมัติเมื่อสั่ง Checkpoint
-3. **🎯 JIT Context Compiler:** รวบรวมบริบทโปรเจกต์ + ADRs + Tech Stack เป็น High-Density Prompt ภายใน 1 วินาที ลดภาระ Token Consumption
-4. **🧬 Cross-Project Pattern Synthesizer:** สกัดโค้ดจริงที่ทดสอบผ่านแล้ว ส่งเข้าไปเป็น Reusable Blueprints ใน [`agent-skill/templates/blueprints/`](https://github.com/AlmxndBL/agent-skill/tree/master/templates/blueprints)
+   - `nexus_doctor` — ตรวจสอบสุขภาพและคุณภาพของ Codebase ตามมาตรฐาน 6 เสาหลัก
+3. **🔄 Closed-Loop Memory Engine:** สแกน Git Diff และบันทึก Session Log + อัปเดตสถานะงานอัตโนมัติเมื่อสั่ง Checkpoint
+4. **🎯 JIT Context Compiler:** รวบรวมบริบทโปรเจกต์ + ADRs + Tech Stack เป็น High-Density Prompt ภายใน 1 วินาที ลดภาระ Token Consumption
+5. **🧬 Cross-Project Pattern Synthesizer:** สกัดโค้ดจริงที่ทดสอบผ่านแล้ว ส่งเข้าไปเป็น Reusable Blueprints ใน [`agent-skill/templates/blueprints/`](https://github.com/AlmxndBL/agent-skill/tree/master/templates/blueprints)
 
 ---
 
@@ -60,14 +65,40 @@ Nexus/
 │   ├── src/core/synthesizer.ts# 🧬 Cross-Project Pattern Synthesizer
 │   └── src/mcp-server.ts      # 🔌 Universal MCP Server
 │
-├── Decisions/                 # บันทึกการตัดสินใจทางสถาปัตยกรรม (ADRs)
-├── Knowledge/                 # เอกสารสถาปัตยกรรม (Architecture) และงานวิจัย (Research)
-├── Projects/                  # บรีฟและสถานะแต่ละโปรเจกต์ (Active / Maintenance)
-├── Sessions/                  # ประวัติการทำงานย้อนหลัง (Action-First Session Logs)
-├── Shared/                    # ข้อมูลส่วนกลาง (Operating State, Task Queue, User Memory)
-├── Skills/                    # คลัง Specialized Skills
-└── Templates/                 # แม่แบบเอกสารมาตรฐาน
+├── Knowledge/
+│   └── Patterns/              # 🌍 [Public] คลัง Gotchas & System Blueprints
+│       ├── _Index.md          # สารบัญกลางเชื่อมโยง Gotchas
+│       ├── gotchas-nuxt4-nitro.md     # ข้อควรระวัง Nuxt 4 + Nitro + Vue 3
+│       ├── gotchas-prisma-postgres.md # ข้อควรระวัง Prisma & Database
+│       ├── gotchas-windows-dev.md     # ข้อควรระวัง Windows Path, Robocopy, PTY
+│       ├── gotchas-ai-memory-tools.md # ข้อควรระวัง AI Agents & Single-committer Git
+│       └── anti-patterns-security.md  # กฎเหล็ก OWASP & Secrets Prevention
+│
+├── Decisions/                 # 🔒 [Local] บันทึกการตัดสินใจทางสถาปัตยกรรม (ADRs)
+├── Projects/                  # 🔒 [Local] บรีฟและสถานะแต่ละโปรเจกต์ (Active / Maintenance)
+├── Sessions/                  # 🔒 [Local] ประวัติการทำงานย้อนหลัง (Action-First Session Logs)
+├── Shared/                    # 🔒 [Local] ข้อมูลส่วนกลาง (Operating State, Task Queue)
+└── Templates/                 # 📐 แม่แบบเอกสารมาตรฐานสำหรับ Obsidian
 ```
+
+---
+
+## 🛠️ วิธีนำ Gotchas ไปใช้งานและเพิ่มภาษาใหม่ (How to use & extend Gotchas)
+
+### 1. วิธีเพิ่ม Gotchas สำหรับภาษาหรือเฟรมเวิร์กใหม่
+หากต้องการเพิ่มข้อควรระวังสำหรับ Stack อื่น ๆ (เช่น Python, Flutter, Go, Next.js):
+1. สร้างไฟล์ใหม่ใน `Knowledge/Patterns/gotchas-<stack>.md`
+2. ใส่ Frontmatter Tag ที่หัวไฟล์:
+   ```yaml
+   ---
+   tags: [knowledge, gotchas, stack/fastapi, stack/python]
+   note_type: gotcha-collection
+   stack: fastapi
+   created: 2026-08-19
+   ---
+   ```
+3. บันทึกเนื้อหาแบบ Micro-Lessons (Trigger $\rightarrow$ ❌ ห้ามทำ $\rightarrow$ ✅ วิธีที่ถูก)
+4. AI จะจับคู่กับโปรเจกต์ที่ตรงกับ Tag นั้นให้อัตโนมัติ!
 
 ---
 
