@@ -1,7 +1,7 @@
 # 🏛️ Nexus 2.0 — Active Personal Engineering OS & Memory Vault
 
 > **Personal Context, Project Hub, Cross-Project Gotchas & Universal MCP Bridge**
-> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Apex Agent Framework](https://github.com/AlmxndBL/agent-skill)
+> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Apex Agent Framework](https://github.com/AlmxndBL/Apex-skill)
 
 ![v2.3.0](https://img.shields.io/badge/v2.3.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -9,7 +9,7 @@
 
 ## 🏛️ สถาปัตยกรรมคู่หู: Nexus 2.0 & Apex (The Twin-Engine Synergy)
 
-Nexus 2.0 และ [Apex](https://github.com/AlmxndBL/agent-skill) ถูกออกแบบขึ้นคู่กันเพื่อสร้าง **Developer Productivity & AI Agent Framework** ระดับ Production-Ready:
+Nexus 2.0 และ [Apex](https://github.com/AlmxndBL/Apex-skill) ถูกออกแบบขึ้นคู่กันเพื่อสร้าง **Developer Productivity & AI Agent Framework** ระดับ Production-Ready:
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
@@ -123,7 +123,7 @@ node bridge/dist/mcp-server.js
 
 ## 🔗 Repository Links & Ecosystem
 
-- **Apex Agent Framework:** 👉 [AlmxndBL/agent-skill](https://github.com/AlmxndBL/agent-skill)
+- **Apex Agent Framework:** 👉 [AlmxndBL/Apex-skill](https://github.com/AlmxndBL/Apex-skill)
 - **Nexus 2.0 Memory Vault:** 👉 [AlmxndBL/nexus](https://github.com/AlmxndBL/nexus)
 - **Developer Profile:** 👉 [AlmxndBL](https://github.com/AlmxndBL)
 
