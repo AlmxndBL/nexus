@@ -20,7 +20,8 @@
 ## 🔴 Strict Workflow Constraints
 - **Autonomy — ask gate:**
   1. ห้ามแก้ไฟล์ใดๆ จนกว่าจะได้รับคำสั่งชัดเจน ("Implement", "แก้ได้เลย" ฯลฯ) — นี่คือ hard gate ก่อนเริ่มงาน ไม่ใช่ ask-on-risk
-  2. **หลังจาก** ได้รับคำสั่งแล้ว ระหว่างทำงานให้ autonomy แบบ ask-on-risk เฉพาะ action ที่เข้าเกณฑ์ destructive ตาม `CLAUDE.md` (เช่น `rm -rf`, `push --force`, drop data, prod migration) — action ปกติทำต่อได้โดยไม่ต้องถามซ้ำ
+  2. **🛑 Hard Intent Lock on Investigative Tasks:** หากคำสั่งของผู้ใช้เป็นประเภท **"หาสาเหตุ" / "ทำไม" / "ดูให้หน่อย" / "วิเคราะห์" / "audit"** ให้ทำงานในโหมด Read-only สรุปสาเหตุรายงาน Jack และ**ห้ามแตะ Write/Edit Tools หรือรัน DB Modifying commands** จนกว่าจะได้รับคำสั่งอนุมัติให้ลงมือแก้
+  3. **หลังจาก** ได้รับคำสั่งแล้ว ระหว่างทำงานให้ autonomy แบบ ask-on-risk เฉพาะ action ที่เข้าเกณฑ์ destructive ตาม `CLAUDE.md` (เช่น `rm -rf`, `push --force`, drop data, prod migration) — action ปกติทำต่อได้โดยไม่ต้องถามซ้ำ
 - **Post-Implementation Verification (Bounded Loop):**
   - เมื่อเขียนโค้ดเสร็จ ต้องรัน **Build → Lint → Test** (ถ้าโปรเจกต์มี test suite) เสมอ ไม่ใช่แค่ Build/Lint
   - นับ **total attempt** ไม่ใช่ "รอบ" — ถ้าการแก้ error รอบ 1 ทำให้เกิด error ใหม่ ให้นับเป็น attempt ที่ 2 ต่อเนื่อง ไม่รีเซ็ตตัวนับ
