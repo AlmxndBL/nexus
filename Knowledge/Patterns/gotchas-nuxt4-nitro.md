@@ -40,3 +40,12 @@ parent: "[[Knowledge/Patterns/_Index]]"
 ### 7. ⚡ Nitro Server Route Error Handling
 - ❌ **ห้ามทำ:** อย่าใช้ `res.status().json()` หรือ `throw new Error()` เปล่า ๆ ใน Nitro Server Handlers
 - ✅ **วิธีที่ถูกต้อง:** ให้ใช้ `createError({ statusCode: 400, statusMessage: '...' })` ของ H3 / Nitro เพื่อให้ Error Payload มีโครงสร้างที่ปลอดภัยและฝั่ง Client ดักจับได้ถูกต้อง
+
+### 8. 📱 Dual Responsive Data Listing (Table vs Card List)
+- ❌ **ห้ามทำ:** อย่าปล่อยให้ `<UTable>` เลื่อนแนวนอนดิบ ๆ บนหน้าจอมือถือโดยไม่มี Card fallback เพราะทำให้ User Experience บน Mobile เสีย
+- ✅ **วิธีที่ถูกต้อง:** ใช้ Dual Responsive Pattern: จอใหญ่ ($\ge 768$px) ใช้ `<UTable>` (`hidden md:block`) และจอมือถือ ($< 768$px) ใช้ Card List (`space-y-1 md:hidden`)
+
+### 9. 🧩 TanStack Table Column `h()` Renderers with Nuxt UI
+- ❌ **ห้ามทำ:** อย่าใช้ string tag ธรรมดาสำหรับ Nuxt UI Component ใน TanStack Column `h("UBadge", ...)` เพราะ Vue Renderer จะมองเป็น Custom Web Component ที่หา definition ไม่เจอ
+- ✅ **วิธีที่ถูกต้อง:** ใช้ `resolveComponent("UBadge")` / `resolveComponent("UButton")` นำมาส่งให้ฟังก์ชัน `h()` เสมอ
+
