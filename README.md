@@ -1,21 +1,21 @@
 # 🏛️ Nexus 2.0 — Active Personal Engineering OS & Memory Vault
 
 > **Personal Context, Project Hub, Cross-Project Gotchas & Universal MCP Bridge**
-> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Master Agent Skill Rules](https://github.com/AlmxndBL/agent-skill)
+> ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Apex Agent Framework](https://github.com/AlmxndBL/agent-skill)
 
 ![v2.3.0](https://img.shields.io/badge/v2.3.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ---
 
-## 🏛️ สถาปัตยกรรมคู่หู: Nexus 2.0 & Agent-Skill (The Twin-Engine Synergy)
+## 🏛️ สถาปัตยกรรมคู่หู: Nexus 2.0 & Apex (The Twin-Engine Synergy)
 
-Nexus 2.0 และ [agent-skill](https://github.com/AlmxndBL/agent-skill) ถูกออกแบบขึ้นคู่กันเพื่อสร้าง **Developer Productivity & AI Agent Framework** ระดับ Production-Ready:
+Nexus 2.0 และ [Apex](https://github.com/AlmxndBL/agent-skill) ถูกออกแบบขึ้นคู่กันเพื่อสร้าง **Developer Productivity & AI Agent Framework** ระดับ Production-Ready:
 
 ```text
 ┌─────────────────────────────────────────────────────────────────┐
 │         🤖 Developer Productivity & AI Agent Framework          │
 ├────────────────────────────────┬────────────────────────────────┤
-│ 🏛️ Nexus 2.0 (Memory Vault)   │ 🧠 Master Agent Skill Rules    │
+│ 🏛️ Nexus 2.0 (Memory Vault)   │ ⚡ Apex (Rules & Behavioral)   │
 │ (Context & Engineering Memory) │ (Rules & Behavioral Engine)    │
 ├────────────────────────────────┼────────────────────────────────┤
 │ • Cross-Project Memory Vault   │ • 6 เสาหลักมาตรฐานวิศวกรรม     │
@@ -26,8 +26,9 @@ Nexus 2.0 และ [agent-skill](https://github.com/AlmxndBL/agent-skill) ถ�
 └────────────────────────────────┴────────────────────────────────┘
 ```
 
-- **`agent-skill`** ทำหน้าที่เป็น **สมองและกฎระเบียบ (The Rules Engine):** ควบคุมให้ AI เขียนโค้ดตามมาตรฐานความปลอดภัย, Strict TypeScript, Zero Fluff และมี Definition of Done
+- **`Apex`** ทำหน้าที่เป็น **สมองและกฎระเบียบ (The Rules Engine):** ควบคุมให้ AI เขียนโค้ดตามมาตรฐานความปลอดภัย, Strict TypeScript, Zero Fluff และมี Definition of Done
 - **`Nexus 2.0`** ทำหน้าที่เป็น **ความจำและระบบปฏิบัติการ (The Memory OS):** จัดเก็บสถานะโปรเจกต์, ประวัติการตัดสินใจ (ADRs), คลังข้อควรระวังข้ามภาษา (Gotchas), และเชื่อมต่อเข้ากับ AI IDE ผ่าน Universal MCP Server
+
 
 ---
 
@@ -122,7 +123,7 @@ node bridge/dist/mcp-server.js
 
 ## 🔗 Repository Links & Ecosystem
 
-- **Master Agent Skill Rules:** 👉 [AlmxndBL/agent-skill](https://github.com/AlmxndBL/agent-skill)
+- **Apex Agent Framework:** 👉 [AlmxndBL/agent-skill](https://github.com/AlmxndBL/agent-skill)
 - **Nexus 2.0 Memory Vault:** 👉 [AlmxndBL/nexus](https://github.com/AlmxndBL/nexus)
 - **Developer Profile:** 👉 [AlmxndBL](https://github.com/AlmxndBL)
 
