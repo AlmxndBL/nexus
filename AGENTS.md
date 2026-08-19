@@ -68,4 +68,6 @@ Invoke with `/skillname`.
    - ในบล็อก `catch (error)` **ต้องพิมพ์ Error ต้นฉบับลง Server Log เสมอ** (เช่น `console.error('[Context] Error:', error)`) เพื่อให้หาบั๊กเจอ
    - ค่าที่ Return กลับไปหา Client ให้ส่งเฉพาะข้อความที่ปลอดภัย (เช่น `Internal Server Error`) **ห้ามส่ง Raw Error** (เช่น Prisma Error หรือ SQL Syntax) ออกไปหา Client เด็ดขาด
 4. **No Placeholder Code:** เมื่อได้รับคำสั่งให้ "Implement" โค้ดที่สร้างออกมาต้องสมบูรณ์พร้อมรัน 100% ห้ามทิ้งคอมเมนต์แบบ `// TODO: implement this` ไว้เด็ดขาด
-5. **Testing:** ทุกฟังก์ชัน service logic ที่มี business logic ซับซ้อน (คำนวณ, validation rule, state transition) ควรมี test ประกบ — อย่างน้อย happy path + 1 edge case ถ้าโปรเจกต์มี test suite อยู่แล้ว ต้องรันผ่านก่อนถือว่างานเสร็จ (ดู Bounded Loop ด้านบน)
+5. **Atomic Refactoring & Clean Migration:** เมื่อมีการย้ายโครงสร้าง Route/Files ต้องสั่งลบไฟล์เก่าทิ้งทันทีในรอบเดียวกัน ป้องกัน Dead Code และ Route ซ้ำซ้อน
+6. **Tool Transparency:** การแก้โค้ดต้องทำผ่าน Native Tools ที่แสดง Diff โปร่งใส ห้ามใช้ Batch Script แอบเขียน Source Code ในโปรเจกต์
+7. **Testing:** ทุกฟังก์ชัน service logic ที่มี business logic ซับซ้อน (คำนวณ, validation rule, state transition) ควรมี test ประกบ — อย่างน้อย happy path + 1 edge case ถ้าโปรเจกต์มี test suite อยู่แล้ว ต้องรันผ่านก่อนถือว่างานเสร็จ (ดู Bounded Loop ด้านบน)
