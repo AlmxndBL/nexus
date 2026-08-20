@@ -87,7 +87,7 @@ describe('${options.patternName} Verification', () => {
 \`\`\`
 `;
 
-  // Write to agent_skill templates/blueprints/
+  // Write to Apex templates/blueprints/
   const agentSkillPath = path.join(agentSkillRoot, 'templates/blueprints', `${slug}.md`);
   writeMarkdownFile(agentSkillPath, blueprintContent);
 

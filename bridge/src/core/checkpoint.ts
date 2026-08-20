@@ -31,7 +31,17 @@ export function scanGitRepository(targetDir: string): { branch: string; files: s
   try {
     const branch = execSync('git rev-parse --abbrev-ref HEAD', { cwd: targetDir, encoding: 'utf-8' }).trim();
     const statusOutput = execSync('git status --porcelain', { cwd: targetDir, encoding: 'utf-8' }).trim();
-    const diffStat = execSync('git diff --stat HEAD~1 2>nul || git diff --stat 2>nul || echo ""', { cwd: targetDir, encoding: 'utf-8' }).trim();
+    
+    let diffStat = '';
+    try {
+      diffStat = execSync('git diff --stat HEAD~1', { cwd: targetDir, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
+    } catch {
+      try {
+        diffStat = execSync('git diff --stat', { cwd: targetDir, encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
+      } catch {
+        diffStat = '';
+      }
+    }
 
     const files = statusOutput
       ? statusOutput.split('\n').map(l => l.trim().slice(3)).filter(Boolean)
@@ -144,10 +154,10 @@ ${nextStepsList}
   // Update Operating State in Nexus
   updateOperatingState(project, summary, sessionSlug);
 
-  // Auto-Update Project README if requested
+  // Auto-Update Project README only if explicitly requested
   let readmeUpdated = false;
   let readmePath: string | undefined;
-  if (options.autoUpdateReadme !== false) {
+  if (options.autoUpdateReadme === true) {
     const rawWhatIDid = options.whatIDid && options.whatIDid.length > 0 ? options.whatIDid : [summary];
     const res = syncProjectReadme(scanDir, summary, rawWhatIDid);
     readmeUpdated = res.updated;

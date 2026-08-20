@@ -37,3 +37,8 @@ parent: "[[Knowledge/Patterns/_Index]]"
 ### 6. 📄 Line Endings (CRLF vs LF)
 - ❌ **ห้ามทำ:** ห้าม Commit ไฟล์ Shell Scripts (`.sh`), Dockerfiles, หรือ Test fixtures ด้วย CRLF
 - ✅ **วิธีที่ถูกต้อง:** ตั้งค่า `.gitattributes` บังคับ `* text=auto eol=lf` สำหรับ Scripts และ Configs
+
+### 7. ⏱️ Heavy I/O Overhead on Full Production Builds (`npm run build`)
+- ❌ **ห้ามทำ:** อย่าสั่ง `npm run build` หรือ `nuxt build` ทุกครั้งที่แก้โค้ดชิ้นเล็กๆ เพราะ Windows File System (NTFS & Defender Scanning) ทำให้ File I/O ใน `.nuxt/` หรือ `.next/` ช้ากว่า Linux ถึง 3–5 เท่า (กินเวลา 45s ถึง 2 นาทีต่อรอบ)
+- ✅ **วิธีที่ถูกต้อง:** ใช้ In-memory TypeCheck (`npx vue-tsc --noEmit` หรือ `npx tsc --noEmit`) ซึ่งกินเวลาเพียง 1–3 วินาที และเก็บ Full Build ไว้รันเฉพาะเมื่อแก้ Global Config ใหญ่หรือก่อน Release เท่านั้น
+

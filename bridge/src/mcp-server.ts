@@ -54,7 +54,7 @@ export async function runMcpServer(): Promise<void> {
         },
         {
           name: 'nexus_doctor',
-          description: 'Project Health & Quality Auditor: Scans a project codebase against the 6-pillar agent_skill standards (Secrets, No-any, DB migrations, Test DoD) and outputs a detailed score & scorecard.',
+          description: 'Project Health & Quality Auditor: Scans a project codebase against the 6-pillar Apex standards (Secrets, No-any, DB migrations, Test DoD) and outputs a detailed score & scorecard.',
           inputSchema: {
             type: 'object',
             properties: {
@@ -68,7 +68,7 @@ export async function runMcpServer(): Promise<void> {
         },
         {
           name: 'nexus_install_git_hook',
-          description: 'Installs a pre-push Git Hook into the target project so that every "git push" automatically logs the session into Nexus and updates README.md.',
+          description: 'Installs a pre-push Git Hook into the target project so that every "git push" automatically logs the session into Nexus.',
           inputSchema: {
             type: 'object',
             properties: {
@@ -95,14 +95,14 @@ export async function runMcpServer(): Promise<void> {
               },
               includeRules: {
                 type: 'boolean',
-                description: 'Whether to include the 6-pillar agent_skill rules in the brief.',
+                description: 'Whether to include the 6-pillar Apex rules in the brief.',
               },
             },
           },
         },
         {
           name: 'nexus_save_session',
-          description: 'Closed-Loop Memory: Records a completed work session into Nexus Sessions/ log, updates Operating State, and optionally syncs project README.md.',
+          description: 'Closed-Loop Memory: Records a completed work session into Nexus Sessions/ log, updates Operating State, and optionally syncs project README.md if explicitly requested.',
           inputSchema: {
             type: 'object',
             properties: {
@@ -134,8 +134,8 @@ export async function runMcpServer(): Promise<void> {
               },
               autoUpdateReadme: {
                 type: 'boolean',
-                description: 'Whether to automatically sync and update the project README.md Latest Updates section.',
-                default: true,
+                description: 'Whether to sync and update the project README.md Latest Updates section (defaults to false).',
+                default: false,
               },
               projectDir: {
                 type: 'string',
@@ -271,7 +271,7 @@ export async function runMcpServer(): Promise<void> {
         const decisions = Array.isArray(args?.decisions) ? args.decisions.map(String) : [];
         const verificationEvidence = typeof args?.verificationEvidence === 'string' ? args.verificationEvidence : undefined;
         const nextSteps = Array.isArray(args?.nextSteps) ? args.nextSteps.map(String) : [];
-        const autoUpdateReadme = typeof args?.autoUpdateReadme === 'boolean' ? args.autoUpdateReadme : true;
+        const autoUpdateReadme = typeof args?.autoUpdateReadme === 'boolean' ? args.autoUpdateReadme : false;
         const cwd = typeof args?.projectDir === 'string' ? args.projectDir : process.cwd();
 
         const result = createSessionCheckpoint({
@@ -368,7 +368,7 @@ ${tradeoffs}
           content: [
             {
               type: 'text',
-              text: `✅ Pattern synthesized & registered:\n- Blueprint: ${result.blueprintName}\n- agent_skill: ${result.agentSkillPath}\n- Nexus Knowledge: ${result.nexusKnowledgePath}`,
+              text: `✅ Pattern synthesized & registered:\n- Blueprint: ${result.blueprintName}\n- Apex: ${result.agentSkillPath}\n- Nexus Knowledge: ${result.nexusKnowledgePath}`,
             },
           ],
         };

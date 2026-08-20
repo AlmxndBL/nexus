@@ -94,12 +94,12 @@ export function compileJITContext(options: CompiledContextOptions = {}): Compile
     sections.push(`\n## 📋 Active Tasks & Priorities\n${tasks.trim()}`);
   }
 
-  // 5. Tier 2 Engineering Rules (agent_skill integration)
+  // 5. Tier 2 Engineering Rules (Apex Framework integration)
   if (options.includeRules) {
     const rulesDir = path.join(agentSkillRoot, 'rules');
     if (fs.existsSync(rulesDir)) {
       const ruleFiles = fs.readdirSync(rulesDir).filter(f => f.endsWith('.md')).sort();
-      sections.push('\n## 📜 6-Pillar Engineering Standards (agent_skill Tier 2)');
+      sections.push('\n## 📜 6-Pillar Engineering Standards (Apex Framework)');
       for (const rf of ruleFiles) {
         const rContent = readMarkdownFile(path.join(rulesDir, rf));
         if (rContent) {

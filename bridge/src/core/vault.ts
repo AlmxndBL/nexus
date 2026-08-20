@@ -24,15 +24,22 @@ export function getVaultRoot(): string {
 }
 
 export function getAgentSkillRoot(): string {
-  const envRoot = process.env.AGENT_SKILL_ROOT;
+  const envRoot = process.env.APEX_CORE_ROOT || process.env.AGENT_SKILL_ROOT;
   if (envRoot && fs.existsSync(envRoot)) {
     return path.resolve(envRoot);
   }
-  const defaultPath = path.resolve('c:/Users/Admin/Desktop/work/agent_skill');
-  if (fs.existsSync(defaultPath)) {
-    return defaultPath;
+  const apexCandidates = [
+    path.resolve('c:/Users/Admin/Desktop/work/Apex-core'),
+    path.resolve(getVaultRoot(), '../Apex-core'),
+    path.resolve('c:/Users/Admin/Desktop/work/agent_skill'),
+    path.resolve(getVaultRoot(), '../agent_skill'),
+  ];
+  for (const candidate of apexCandidates) {
+    if (fs.existsSync(candidate)) {
+      return candidate;
+    }
   }
-  return path.resolve(getVaultRoot(), '../agent_skill');
+  return path.resolve(getVaultRoot(), '../Apex-core');
 }
 
 export function readMarkdownFile(filePath: string): string | null {

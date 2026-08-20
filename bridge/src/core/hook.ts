@@ -37,7 +37,7 @@ export function installGitHook(targetDir: string = process.cwd(), customProjectN
   const hookScript = `#!/usr/bin/env sh
 # Nexus 2.0 Auto-Checkpoint Hook on Git Push
 echo "🏛️ [Nexus] Auto-recording session checkpoint before git push..."
-node "${cliPath}" checkpoint "${projectName}" "Auto-checkpoint: Git push to remote"
+node "${cliPath}" checkpoint "${projectName}" "Auto-checkpoint: Git push to remote" --no-readme
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -ne 0 ]; then

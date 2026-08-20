@@ -25,6 +25,8 @@ parent: "[[Knowledge/_Index]]"
 | **AI Agents & Memory Harness** | `stack/universal`, `ai/memory` | ข้อควรระวังเรื่อง Single-committer Git, Slug naming, Token diet, Graphify | [[gotchas-ai-memory-tools\|AI Memory Gotchas]] |
 | **Security Anti-Patterns** | `stack/universal`, `sec/owasp` | ข้อห้ามเรื่อง Hardcoded Secrets, SQLi, Missing Authorization | [[anti-patterns-security\|Security Anti-Patterns]] |
 | **Thai Typography & Micro-UI** | `stack/universal`, `ui/typography`, `stack/tailwind` | สระภาษาไทยชนกัน, Bounding Box Clearance, และสูตรเรขาคณิตคำนวณ Slider Toggle | [[gotchas-thai-typography-and-custom-ui\|Thai Typography & UI Gotchas]] |
+| **Monolithic Routing & God Dashboard** | `architecture/routing`, `pattern/anti-pattern` | ข้อห้ามเรื่อง God Dashboard รวมทุก Domain ไว้ใน Route เดียว, ผลกระทบ API Waterfall & RBAC | [[anti-patterns-architecture-and-routing\|Monolithic Routing Anti-Patterns]] |
+| **Visual Reference & Scope Control** | `agent/workflow`, `pattern/scope-control` | แนวทางการถอดความต้องการจากภาพ UI Reference, 3-Tier Classification, ป้องกัน Scope Creep | [[agent-collaboration-and-scope-patterns\|Visual Reference Scope Patterns]] |
 
 ---
 

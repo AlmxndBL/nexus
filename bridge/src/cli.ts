@@ -86,13 +86,13 @@ async function main() {
       console.log('💾 Recording Closed-Loop Session Checkpoint...\n');
       const project = args[1] || 'Nexus';
       const summary = args[2] || 'Automated session checkpoint';
-      const noReadme = args.includes('--no-readme');
+      const withReadme = args.includes('--with-readme');
 
       const result = createSessionCheckpoint({
         project,
         summary,
         whatIDid: [summary],
-        autoUpdateReadme: !noReadme,
+        autoUpdateReadme: withReadme,
       });
 
       console.log(`✅ Session log created at: ${result.sessionFilePath}`);
@@ -107,7 +107,7 @@ async function main() {
       console.log('🧬 Extracting and synthesizing battle-tested blueprints from production...\n');
       const res = synthesizeLineWebhookBlueprint();
       console.log(`✅ Blueprint created: ${res.blueprintName}`);
-      console.log(`   - agent_skill: ${res.agentSkillPath}`);
+      console.log(`   - Apex: ${res.agentSkillPath}`);
       console.log(`   - Nexus Knowledge: ${res.nexusKnowledgePath}`);
       break;
     }
@@ -123,8 +123,8 @@ Usage:
   nexus install-hook [projectDir]  Install auto-checkpoint pre-push git hook
   nexus uninstall-hook [dir]       Remove pre-push git hook
   nexus brief <project> [--rules]  Compile high-density JIT context packet
-  nexus checkpoint [proj] [msg]    Auto-record session log from git diff & update README.md
-  nexus seed-blueprints            Extract & register reusable blueprints into agent_skill
+  nexus checkpoint [proj] [msg]    Auto-record session log from git diff
+  nexus seed-blueprints            Extract & register reusable blueprints into Apex
   nexus mcp                        Start the Model Context Protocol (MCP) server
 `);
       break;

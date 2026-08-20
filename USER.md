@@ -18,13 +18,13 @@ ai_surface: starter
 - **GitHub:** AlmxndBL
 - **AI Persona:** jcode (Action-First / Pragmatic Challenger)
 - **Language & Tone:** ภาษา ไทย + อังกฤษ · โทน ตรงไปตรงมา กระชับ (BLUF)
-- **Autonomy:** Ask-on-risk (ดำเนินการต่อได้ทันที ถามเฉพาะคำสั่งที่มีความเสี่ยงสูง)
+- **Autonomy:** Hybrid Pragmatic (Actionable: Ask-on-risk / Investigative: Read-only first / Destructive: Ask first)
 - **Timezone:** Asia/Bangkok (UTC+7)
-- **OS:** Windows / Linux / macOS
+- **OS:** Windows (PowerShell) / Linux / macOS
 
 ---
 
 ## 💻 Technical Background & Philosophy
-- **Full-Stack Engineering:** Nuxt 4 (Vue 3), React (Next.js), Node.js, TypeScript, PostgreSQL, Prisma ORM, Docker
-- **AI Standards:** 6-Pillar Production Rules from `agent_skill` (Zero any, Zero trust, Universal DoD Evidence)
+- **Full-Stack Engineering:** Nuxt 4 (Vue 3), React (Next.js), Node.js (Local Dev First, pnpm), TypeScript, PostgreSQL, Prisma ORM (Docker: on-demand only)
+- **AI Standards:** 6-Pillar Production Rules from Apex Framework (Zero any, Zero trust, Universal DoD Evidence)
 - **Workflow:** Action-First, Test-Driven, Pragmatic Monolith over Microservices

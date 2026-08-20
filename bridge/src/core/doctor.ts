@@ -112,8 +112,17 @@ export function runProjectDoctor(projectOrPath: string): DoctorReport {
       const lines = content.split('\n');
 
       lines.forEach((line, idx) => {
+        const trimmed = line.trim();
+        // Ignore full line comments
+        if (trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) {
+          return;
+        }
+
+        // Strip inline comments before checking
+        const codeOnly = line.split('//')[0];
+
         // Check for forbidden any
-        if (/:\s*any\b|as\s+any\b|<any>/.test(line) && !line.includes('// eslint-disable') && !line.includes('/*')) {
+        if (/:\s*any\b|as\s+any\b|<any>/.test(codeOnly) && !line.includes('eslint-disable')) {
           anyCount++;
           if (tsIssues.length < 5) {
             tsIssues.push(`Forbidden \`any\` found in \`${path.relative(absPath, file)}:${idx + 1}\``);
@@ -121,7 +130,7 @@ export function runProjectDoctor(projectOrPath: string): DoctorReport {
         }
 
         // Check for empty catch block
-        if (/catch\s*\([^)]*\)\s*\{\s*\}/.test(line)) {
+        if (/catch\s*\([^)]*\)\s*\{\s*\}/.test(codeOnly)) {
           emptyCatchCount++;
           if (tsIssues.length < 5) {
             tsIssues.push(`Swallowed empty catch block in \`${path.relative(absPath, file)}:${idx + 1}\``);
@@ -195,7 +204,7 @@ export function runProjectDoctor(projectOrPath: string): DoctorReport {
   let markdown = `# 🩺 Nexus Doctor Health Report: ${name}\n`;
   markdown += `> **Target Path:** \`${absPath}\`\n`;
   markdown += `> **Overall Health Score:** **${overallScore}/100** (Grade: **${grade}**)\n`;
-  markdown += `> **Evaluation Standard:** \`agent_skill\` 6-Pillar Production Rules\n\n`;
+  markdown += `> **Evaluation Standard:** \`Apex\` 6-Pillar Production Rules\n\n`;
   markdown += `| Category | Checkpoint | Status | Score |\n`;
   markdown += `|---|---|---|---|\n`;
 
@@ -219,7 +228,7 @@ export function runProjectDoctor(projectOrPath: string): DoctorReport {
   }
 
   if (checks.every(c => c.passed)) {
-    markdown += `✨ **All checks passed!** This codebase adheres strictly to \`agent_skill\` production standards.\n`;
+    markdown += `✨ **All checks passed!** This codebase adheres strictly to \`Apex\` production standards.\n`;
   }
 
   return {
