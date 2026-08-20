@@ -24,6 +24,7 @@ parent: "[[Knowledge/_Index]]"
 | **Windows Dev Environment** | `stack/universal`, `os/windows` | ข้อควรระวังเรื่อง Robocopy `/XD` `/XF`, Exit codes 0-7, `npm run` CMD, Worker Detached | [[gotchas-windows-dev\|Windows Dev Gotchas]] |
 | **AI Agents & Memory Harness** | `stack/universal`, `ai/memory` | ข้อควรระวังเรื่อง Single-committer Git, Slug naming, Token diet, Graphify | [[gotchas-ai-memory-tools\|AI Memory Gotchas]] |
 | **Security Anti-Patterns** | `stack/universal`, `sec/owasp` | ข้อห้ามเรื่อง Hardcoded Secrets, SQLi, Missing Authorization | [[anti-patterns-security\|Security Anti-Patterns]] |
+| **Thai Typography & Micro-UI** | `stack/universal`, `ui/typography`, `stack/tailwind` | สระภาษาไทยชนกัน, Bounding Box Clearance, และสูตรเรขาคณิตคำนวณ Slider Toggle | [[gotchas-thai-typography-and-custom-ui\|Thai Typography & UI Gotchas]] |
 
 ---
 
