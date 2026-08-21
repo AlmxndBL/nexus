@@ -1,15 +1,15 @@
----
+﻿---
 tags: [user, identity, durable-index]
 note_type: durable-index
 created: 2026-08-17
-updated: 2026-08-17
+updated: 2026-08-22
 parent: "[[_index]]"
 ai_surface: starter
 ---
 
 # USER Profile & Working Preferences
 
-> **สำหรับ AI Agent:** อ่านข้อมูลเจ้าของและความต้องการในการทำงาน (Single Source of Truth)
+> **สำหรับ AI Agent:** ข้อมูลเจ้าของและ Tech Stack หลักในการทำงาน (Single Source of Truth)
 
 ---
 
@@ -24,7 +24,11 @@ ai_surface: starter
 
 ---
 
-## 💻 Technical Background & Philosophy
-- **Full-Stack Engineering:** Nuxt 4 (Vue 3), React (Next.js), Node.js (Local Dev First, pnpm), TypeScript, PostgreSQL, Prisma ORM (Docker: on-demand only)
-- **AI Standards:** 6-Pillar Production Rules from Apex Framework (Zero any, Zero trust, Universal DoD Evidence)
-- **Workflow:** Action-First, Test-Driven, Pragmatic Monolith over Microservices
+## 💻 Tech Stack & Engineering Standards
+
+- **Core Languages:** TypeScript, C#, JavaScript, Python, SQL
+- **Frontend & UI:** Nuxt 4, Vue.js 3.5, Next.js 15, React 19, React Native (Expo), Tailwind CSS v4, Nuxt UI v4
+- **Backend & Database:** Node.js, Nitro, .NET 8, Fastify, PostgreSQL, Prisma 7 ORM, EF Core
+- **DevOps, Tooling & AI:** Vercel, Cloudflare, Docker, Git, Vitest
+- **Engineering Philosophy:** Apex 6-Pillar Rules (Zero `any`, Zero-trust, Debuggable error logs, Universal DoD Evidence)
+- **Package Manager & Workflow:** pnpm, Local Dev First, Pragmatic Monolith over Microservices

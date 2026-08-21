@@ -28,3 +28,17 @@ parent: "[[Knowledge/Patterns/_Index]]"
 ### 4. 🌐 Graphify Knowledge Graph Hygiene
 - ❌ **ห้ามทำ:** อย่ารัน `/graphify` สแกนทั้งโฟลเดอร์ที่มี `node_modules`, `.git`, หรือ `dist/build`
 - ✅ **วิธีที่ถูกต้อง:** กำหนด Root Target เฉพาะโฟลเดอร์ `src/`, `server/`, `app/` หรือโฟลเดอร์ `Sessions/` เพื่อให้ได้ Knowledge Graph ที่สะอาดและมีแต่ความสัมพันธ์จริงของโค้ด
+
+### 5. 🛡️ Vault Automated Backup & Remote Git Sync
+- ❌ **ห้ามทำ:** ปล่อยให้ Knowledge Vault อยู่ใน Local Disk โดยไม่มี Automated Remote Sync หรือ Git Remote Backup ป้องกันข้อมูลสูญหายเมื่อเครื่องเกิด Hardware Failure
+- ✅ **วิธีที่ถูกต้อง (Nexus Backup & Sync Standard):**
+  1. **Git Remote Sync:** ตั้งค่า Git Remote (`origin`) ชี้ไปยัง Private Repository บน GitHub/GitLab
+  2. **Automated Pre-Push Checkpoints:** ใช้ Nexus Git Hook (`installGitHook`) เพื่อ Auto-checkpoint Session ทุกครั้งก่อน Push
+  3. **Disaster Recovery Checklist:**
+     - โคลน Vault จาก Git Remote: `git clone <remote-url> Nexus`
+     - ติดตั้ง Dependencies ของ Bridge: `cd Nexus/bridge && pnpm install && pnpm build`
+     - รัน Health Audit: `pnpm run test` และรัน `nexus doctor` เพื่อยืนยันความสมบูรณ์ของ Vault 100%
+
+---
+
+up:: [[Knowledge/Patterns/_Index]]

@@ -129,3 +129,18 @@ export const prisma =
         : ['error', 'warn'],
   });
 ```
+
+---
+
+## 🚨 Gotcha 5: Orphaned Media & Cloud Storage Leaks บน Failed Database Mutations
+
+### ❌ Anti-pattern ที่ต้องหลีกเลี่ยง:
+อัปโหลดรูปภาพ (เช่น สลิปโอนเงิน, รูปมิเตอร์น้ำไฟ) ขึ้น Cloudflare R2 / AWS S3 ได้ URL สำเร็จ แต่เมื่อขั้นตอนถัดไปเกิด Error ในการ Insert ลง Database (Validation พัง, Database Timeout) โค้ดปล่อยทิ้งไว้โดยไม่ Cleanup
+
+### 💥 ผลกระทบ:
+ไฟล์ขยะจะสะสมค้างอยู่บน Cloud Storage เพิ่มขึ้นเรื่อยๆ โดยไม่มี Database Record ผูกอยู่ ทำให้สิ้นเปลืองค่า Storage และตรวจหาเจ้าของไฟล์ไม่ได้
+
+### ✅ Best Practice Solution:
+1. **Try-Catch Rollback:** สั่งลบไฟล์บน Cloud Storage ทันทีใน `catch` block หาก Database Transaction ล้มเหลว
+2. **Storage Lifecycle Expiry:** อัปโหลดไฟล์ชั่วคราวเข้าโฟลเดอร์ `/temp/` พร้อมตั้งค่า S3/R2 Lifecycle Rule ให้ลบไฟล์อัตโนมัติภายใน 24 ชั่วโมง และย้ายไฟล์มาโฟลเดอร์จริงเฉพาะเมื่อ Database Commit สำเร็จแล้วเท่านั้น
+

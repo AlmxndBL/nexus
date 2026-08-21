@@ -49,3 +49,12 @@ parent: "[[Knowledge/Patterns/_Index]]"
 - ❌ **ห้ามทำ:** อย่าใช้ string tag ธรรมดาสำหรับ Nuxt UI Component ใน TanStack Column `h("UBadge", ...)` เพราะ Vue Renderer จะมองเป็น Custom Web Component ที่หา definition ไม่เจอ
 - ✅ **วิธีที่ถูกต้อง:** ใช้ `resolveComponent("UBadge")` / `resolveComponent("UButton")` นำมาส่งให้ฟังก์ชัน `h()` เสมอ
 
+### 10. 🔄 Nuxt 4 Cache Invalidation & Stale State (`refreshNuxtData`)
+- ❌ **ห้ามทำ:** เมื่อทำ Action เปลี่ยนแปลงข้อมูล (Create/Update/Delete) แล้วลืมสั่ง Invalidate Cache ของ `useFetch` / `useAsyncData` ทำให้หน้าจอแสดงข้อมูลเก่าค้าง
+- ✅ **วิธีที่ถูกต้อง:** ตั้ง Key ชัดเจนใน `useFetch('rooms', ...)` และสั่ง `await refreshNuxtData('rooms')` หรือ `clearNuxtData('rooms')` หลัง Mutation สำเร็จทุกครั้ง
+
+### 11. ⚡ Webhook Fast-ACK & Timeout Storm Prevention (LINE / PromptPay)
+- ❌ **ห้ามทำ:** อย่ารอคำนวณงานหนักหรือรัน Transaction นานเกิน 3-5 วินาทีก่อนตอบ Webhook เพราะ LINE/ธนาคารจะถือว่า Timeout และยิง Retry ซ้ำ (Webhook Storm)
+- ✅ **วิธีที่ถูกต้อง:** ตรวจสอบ Signature ให้ผ่าน แล้วส่งคืน HTTP `200 OK` ทันที จากนั้นค่อยส่งงานประมวลผลต่อแบบ Asynchronous
+
+
