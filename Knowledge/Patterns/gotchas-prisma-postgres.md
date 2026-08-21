@@ -41,3 +41,17 @@ parent: "[[Knowledge/Patterns/_Index]]"
   const end = dayjs().tz('Asia/Bangkok').endOf('day').toDate();
   ```
 
+### 7. 🔒 Concurrency & Double-Booking Prevention
+- ❌ **ห้ามทำ:** อย่าเช็กความว่างของ Slot (`findFirst`) แล้วตามด้วย `create` แยกคำสั่งกันโดยไม่มี Lock เพราะถ้ายิงพร้อมกัน 2 Requests จะเกิด Double Booking
+- ✅ **วิธีที่ถูกต้อง:**
+  1. ใช้ **PostgreSQL `EXCLUDE USING gist (tsrange(start_time, end_time) WITH &&)`** ที่ Database Constraint
+  2. หรือรันใน `$transaction` พร้อมใช้ **Optimistic Locking (`version` column)** หรือ **`SELECT FOR UPDATE`** ผ่าน `$queryRaw`
+
+### 8. 🛡️ Supabase RLS vs Prisma `service_role` Bypass
+- ❌ **ห้ามทำ:** อย่าทึกทักเอาเองว่าเปิด Supabase Row-Level Security (RLS) แล้ว Prisma จะบังคับ Tenant Isolation ให้อัตโนมัติ เพราะ Prisma เชื่อมต่อด้วย Direct/Pooler connection ที่ถือสิทธิ์ Bypass RLS เสมอ
+- ✅ **วิธีที่ถูกต้อง:** ต้องใส่เงื่อนไข `where: { tenantId }` ใน Service / Repository Layer เสมอ หรือใช้ Extension/Middleware กำหนด Tenant Session Variable ก่อน Query
+
+---
+
+up:: [[Knowledge/Patterns/_Index]]
+

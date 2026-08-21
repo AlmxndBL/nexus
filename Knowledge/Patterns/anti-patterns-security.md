@@ -53,4 +53,12 @@ parent: "[[Knowledge/Patterns/_Index]]"
 - ❌ **ห้ามทำ:** สั่ง Query Database เพื่อเช็ก `tokenVersion` หรือ `sessionId` ในทุกๆ Read Request ปกติ ซึ่งทำให้ Stateless JWT กลายเป็น Stateful DB Bottleneck
 - ✅ **วิธีที่ถูกต้อง:** เช็ก `tokenVersion` เฉพาะตอน **Refresh Token (ทุก 10-15 นาที)** และตอนทำธุรกรรมวิกฤต (Critical Mutations) เท่านั้น
 
+### 11. 📱 LINE LIFF / Third-Party Identity Spoofing
+- ❌ **ห้ามทำ:** ยอมรับ `userId` หรือ `lineUserId` ที่ส่งมาใน JSON Request Body ของ Client โดยตรง เพราะผู้ไม่ประสงค์ดีสามารถปลอมแปลง `userId` ของผู้อื่นเพื่อขโมยข้อมูลหรือสร้างคำสั่งแทนได้
+- ✅ **วิธีที่ถูกต้อง:** ส่ง **LINE `id_token`** มายัง Server แล้วตรวจสอบความถูกต้องผ่าน LINE Token Verification API (`https://api.line.me/oauth2/v2.1/verify`) หรือ Cryptographic Signature เทียบกับ LINE Channel ID เสมอเพื่อดึง `sub` (User ID จริง)
+
+---
+
+up:: [[Knowledge/Patterns/_Index]]
+
 
