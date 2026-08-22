@@ -19,6 +19,7 @@ template ไว้ instantiate (session/bug/handoff/project)
 ## Templates
 
 - [[Templates/session]] — session log หลังจบงานหรือ checkpoint สำคัญ
+- [[Templates/session-handoff]] — ส่งต่องานค้างแบบ Resumable Checkpoint ให้ Agent เซสชันถัดไป
 - [[Templates/handoff]] — ส่งต่องานค้างให้ session/agent ถัดไป
 - [[Templates/project]] — project overview
 - [[Templates/bug]] — bug report

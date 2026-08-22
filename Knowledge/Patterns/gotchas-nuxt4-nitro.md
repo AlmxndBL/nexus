@@ -2,8 +2,10 @@
 tags: [knowledge, gotchas, stack/nuxt4, stack/vue, runtime/nitro]
 note_type: gotcha-collection
 stack: nuxt4
-created: 2026-08-19
-updated: 2026-08-19
+confidence: 0.95
+times_applied: 43
+last_validated: 2026-08-22
+source: session
 parent: "[[Knowledge/Patterns/_Index]]"
 ---
 

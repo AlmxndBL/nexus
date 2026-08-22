@@ -2,8 +2,10 @@
 tags: [knowledge, gotchas, stack/prisma, stack/postgres, stack/database]
 note_type: gotcha-collection
 stack: prisma
-created: 2026-08-19
-updated: 2026-08-19
+confidence: 0.95
+times_applied: 35
+last_validated: 2026-08-22
+source: session
 parent: "[[Knowledge/Patterns/_Index]]"
 ---
 

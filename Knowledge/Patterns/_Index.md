@@ -13,6 +13,16 @@ parent: "[[Knowledge/_Index]]"
 
 ---
 
+## 📊 Pattern Confidence Scoring Policy
+
+ทุกไฟล์ในคลังนี้รองรับ Frontmatter Metadata สำหรับวัดระดับความน่าเชื่อถือและการนำไปใช้จริง:
+* `confidence`: **0.0 - 1.0** (ค่าเริ่มต้น 0.8+, เพิ่ม +0.1 ทุกครั้งที่ถูกอ้างอิงและแก้ปัญหาสำเร็จ, สูงสุด 1.0)
+* `times_applied`: จำนวนครั้งที่ถูกนำไปใช้ในเซสชันจริง
+* `last_validated`: วันที่ตรวจสอบความถูกต้องล่าสุด
+* `source`: ที่มาของข้อมูล (`session`, `user-correction`, `research`)
+
+---
+
 ## ⚠️ Gotchas & Anti-Patterns (แยกตาม Stack)
 
 | Tech Stack / Topic | Tags | Description | Link |
@@ -31,6 +41,7 @@ parent: "[[Knowledge/_Index]]"
 | **Security Anti-Patterns** | `stack/universal`, `sec/owasp` | ข้อห้ามเรื่อง Hardcoded Secrets, SQLi, Missing Authorization, Broken Object Level Auth | [[anti-patterns-security\|Security Anti-Patterns]] |
 | **Monolithic Routing & God Dashboard** | `architecture/routing`, `pattern/anti-pattern` | ข้อห้ามเรื่อง God Dashboard รวมทุก Domain ไว้ใน Route เดียว, ผลกระทบ API Waterfall & RBAC | [[anti-patterns-architecture-and-routing\|Monolithic Routing Anti-Patterns]] |
 | **Visual Reference & Scope Control** | `agent/workflow`, `pattern/scope-control` | แนวทางการถอดความต้องการจากภาพ UI Reference, 3-Tier Classification, ป้องกัน Scope Creep | [[agent-collaboration-and-scope-patterns\|Visual Reference Scope Patterns]] |
+| **Agent Behavioral Anti-Patterns** | `agent/behavioral`, `pattern/anti-pattern` | ข้อห้ามเชิงพฤติกรรม: Silent Assumption, Overengineering Reflex, Drive-by Refactoring | [[gotchas-agent-behavioral-anti-patterns\|Agent Behavioral Anti-Patterns]] |
 
 ---
 

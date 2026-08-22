@@ -3,7 +3,7 @@
 > **Personal Context, Project Hub, Cross-Project Gotchas & Universal MCP Bridge**
 > ส่วนขยายหน่วยความจำระยะยาว (Long-Term Memory) และคลังบทเรียนข้อผิดพลาดข้ามโปรเจกต์ (Stack-Aware Gotchas) ทำงานผสานรวมกับ [Apex Agent Framework](https://github.com/AlmxndBL/Apex-core)
 
-![v2.3.0](https://img.shields.io/badge/v2.3.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![v2.4.0](https://img.shields.io/badge/v2.4.0-blue.svg) ![Status](https://img.shields.io/badge/status-active-00DC82.svg) ![MCP](https://img.shields.io/badge/MCP-enabled-818CF8.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ---
 
@@ -20,23 +20,23 @@ Nexus 2.0 และ [Apex](https://github.com/AlmxndBL/Apex-core) ถูกอ�
 ├────────────────────────────────┼────────────────────────────────┤
 │ • Cross-Project Memory Vault   │ • 6 เสาหลักมาตรฐานวิศวกรรม     │
 │ • Stack-Aware Gotchas Library  │ • Strict TS (Matt Pocock)      │
-│ • JIT Context Compiler         │ • Universal Definition of Done  │
-│ • Universal MCP Tools (8 tools)│ • Closed-Loop Memory Protocols │
+│ • Pattern Confidence Scoring   │ • Karpathy Behavioral Gates    │
+│ • Resumable Session Handoffs   │ • Context Budget & Token Diet  │
+│ • Universal MCP Tools (8 tools)│ • Universal Definition of Done  │
 │ • บันทึก ADRs & Session Auto   │ • 🛡️ Git Shield ป้องกันหลุด    │
 └────────────────────────────────┴────────────────────────────────┘
 ```
 
-- **`Apex`** ทำหน้าที่เป็น **สมองและกฎระเบียบ (The Rules Engine):** ควบคุมให้ AI เขียนโค้ดตามมาตรฐานความปลอดภัย, Strict TypeScript, Zero Fluff และมี Definition of Done
-- **`Nexus 2.0`** ทำหน้าที่เป็น **ความจำและระบบปฏิบัติการ (The Memory OS):** จัดเก็บสถานะโปรเจกต์, ประวัติการตัดสินใจ (ADRs), คลังข้อควรระวังข้ามภาษา (Gotchas), และเชื่อมต่อเข้ากับ AI IDE ผ่าน Universal MCP Server
-
+- **`Apex`** ทำหน้าที่เป็น **สมองและกฎระเบียบ (The Rules Engine):** ควบคุมให้ AI เขียนโค้ดตามมาตรฐานความปลอดภัย, Strict TypeScript, Zero Fluff, Karpathy Behavioral Gates และมี Definition of Done
+- **`Nexus 2.0`** ทำหน้าที่เป็น **ความจำและระบบปฏิบัติการ (The Memory OS):** จัดเก็บสถานะโปรเจกต์, ประวัติการตัดสินใจ (ADRs), คลังข้อควรระวังข้ามภาษาพร้อม Confidence Scoring, และเชื่อมต่อเข้ากับ AI IDE ผ่าน Universal MCP Server
 
 ---
 
 ## ⚡ 5 เสาหลักของ Nexus 2.0 (Core Pillars)
 
-1. **⚠️ Stack-Aware Gotchas Library (`Knowledge/Patterns/`):**
-   - คลังรวบรวมข้อควรระวังและบั๊กจริงที่สกัดจากประวัติการทำงาน (Nuxt 4, Prisma, Windows Dev, Security)
-   - ใช้ระบบ **Frontmatter Tagging** (`stack/nuxt4`, `stack/prisma`, `stack/universal`) เพื่อให้ AI โหลดเฉพาะกฎที่ตรงกับโปรเจกต์ ป้องกันปัญหา Context Contamination และไม่เปลือง Token
+1. **⚠️ Stack-Aware Gotchas & Confidence Scoring (`Knowledge/Patterns/`):**
+   - คลังรวบรวมข้อควรระวังและบั๊กจริงที่สกัดจากประวัติการทำงาน (Nuxt 4, Prisma, TypeScript, Agent Behavioral Anti-Patterns)
+   - ใช้ระบบ **Frontmatter Tagging & Confidence Scoring** (`confidence: 0.0-1.0`, `times_applied`) เพื่อจัดลำดับความน่าเชื่อถือ
 2. **🔌 Universal MCP Server:** เชื่อมต่อ Memory Vault เข้ากับ Google Antigravity, Cursor, Claude Code, Windsurf ผ่าน MCP Tools:
    - `nexus_get_state` — ดึง Operating State ปัจจุบันและ Task Queue
    - `nexus_get_project_brief` — ดึง Context บรีฟของโปรเจกต์ที่ระบุในรูปแบบ High-Density
@@ -44,9 +44,9 @@ Nexus 2.0 และ [Apex](https://github.com/AlmxndBL/Apex-core) ถูกอ�
    - `nexus_record_decision` — บันทึก Architecture Decision Record (ADR)
    - `nexus_synthesize_pattern` — สกัด Production Blueprint ส่งเข้า `agent-skill`
    - `nexus_doctor` — ตรวจสอบสุขภาพและคุณภาพของ Codebase ตามมาตรฐาน 6 เสาหลัก
-3. **🔄 Closed-Loop Memory Engine:** สแกน Git Diff และบันทึก Session Log + อัปเดตสถานะงานอัตโนมัติเมื่อสั่ง Checkpoint
+3. **🔄 Resumable Session Handoff Engine:** รองรับการบันทึก Checkpoint แบบมีโครงสร้าง เพื่อให้ Agent เซสชันถัดไปทำงานต่อได้ทันที
 4. **🎯 JIT Context Compiler:** รวบรวมบริบทโปรเจกต์ + ADRs + Tech Stack เป็น High-Density Prompt ภายใน 1 วินาที ลดภาระ Token Consumption
-5. **🧬 Cross-Project Pattern Synthesizer:** สกัดโค้ดจริงที่ทดสอบผ่านแล้ว ส่งเข้าไปเป็น Reusable Blueprints ใน [`agent-skill/templates/blueprints/`](https://github.com/AlmxndBL/agent-skill/tree/master/templates/blueprints)
+5. **🧬 Cross-Project Pattern Synthesizer:** สกัดโค้ดจริงที่ทดสอบผ่านแล้ว ส่งเข้าไปเป็น Reusable Blueprints ในคลังความรู้ส่วนกลาง
 
 ---
 
@@ -68,9 +68,11 @@ Nexus/
 │
 ├── Knowledge/
 │   └── Patterns/              # 🌍 [Public] คลัง Gotchas & System Blueprints
-│       ├── _Index.md          # สารบัญกลางเชื่อมโยง Gotchas
+│       ├── _Index.md          # สารบัญกลางเชื่อมโยง Gotchas & Confidence Policy
 │       ├── gotchas-nuxt4-nitro.md     # ข้อควรระวัง Nuxt 4 + Nitro + Vue 3
 │       ├── gotchas-prisma-postgres.md # ข้อควรระวัง Prisma & Database
+│       ├── gotchas-coding-and-typescript.md # ข้อควรระวัง TypeScript & Async State
+│       ├── gotchas-agent-behavioral-anti-patterns.md # ข้อห้ามเชิงพฤติกรรมของ AI Agent
 │       ├── gotchas-windows-dev.md     # ข้อควรระวัง Windows Path, Robocopy, PTY
 │       ├── gotchas-ai-memory-tools.md # ข้อควรระวัง AI Agents & Single-committer Git
 │       └── anti-patterns-security.md  # กฎเหล็ก OWASP & Secrets Prevention
@@ -79,7 +81,7 @@ Nexus/
 ├── Projects/                  # 🔒 [Local] บรีฟและสถานะแต่ละโปรเจกต์ (Active / Maintenance)
 ├── Sessions/                  # 🔒 [Local] ประวัติการทำงานย้อนหลัง (Action-First Session Logs)
 ├── Shared/                    # 🔒 [Local] ข้อมูลส่วนกลาง (Operating State, Task Queue)
-└── Templates/                 # 📐 แม่แบบเอกสารมาตรฐานสำหรับ Obsidian
+└── Templates/                 # 📐 แม่แบบเอกสารมาตรฐาน (Session, Handoff, ADRs)
 ```
 
 ---
@@ -95,7 +97,10 @@ Nexus/
    tags: [knowledge, gotchas, stack/fastapi, stack/python]
    note_type: gotcha-collection
    stack: fastapi
-   created: 2026-08-19
+   confidence: 0.9
+   times_applied: 1
+   last_validated: 2026-08-22
+   source: session
    ---
    ```
 3. บันทึกเนื้อหาแบบ Micro-Lessons (Trigger $\rightarrow$ ❌ ห้ามทำ $\rightarrow$ ✅ วิธีที่ถูก)
@@ -126,11 +131,3 @@ node bridge/dist/mcp-server.js
 - **Apex Agent Framework:** 👉 [AlmxndBL/Apex-core](https://github.com/AlmxndBL/Apex-core)
 - **Nexus 2.0 Memory Vault:** 👉 [AlmxndBL/nexus](https://github.com/AlmxndBL/nexus)
 - **Developer Profile:** 👉 [AlmxndBL](https://github.com/AlmxndBL)
-
-
-
----
-
-## 📌 Latest Updates
-- **2026-08-19 (23:36):** Auto-checkpoint: Git push to remote
-  * Auto-checkpoint: Git push to remote

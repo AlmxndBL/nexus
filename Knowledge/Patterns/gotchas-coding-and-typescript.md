@@ -2,8 +2,10 @@
 tags: [knowledge, gotchas, stack/universal, stack/typescript, stack/vue, stack/react]
 note_type: gotcha-collection
 stack: typescript
-created: 2026-08-20
-updated: 2026-08-20
+confidence: 0.95
+times_applied: 50
+last_validated: 2026-08-22
+source: session
 parent: "[[Knowledge/Patterns/_Index]]"
 ---
 
