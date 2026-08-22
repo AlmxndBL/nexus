@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "nexus": {
+      "command": "node",
+      "args": ["C:/Users/Admin/Desktop/work/Nexus/bridge/dist/cli.js", "mcp"],
+      "env": {
+        "NEXUS_VAULT_ROOT": "C:/Users/Admin/Desktop/work/Nexus",
+        "APEX_PLUGIN_ROOT": "C:/Users/Admin/Desktop/work/Apex-core"
+      }
+    }
+  }
+}

@@ -27,6 +27,7 @@ ai_surface: hot
 | ความชอบและสไตล์ของเจ้าของ | `Shared/User-Memory/` | `user-preferences.md` |
 | ข้อเท็จจริงถาวรที่ห้ามละเมิด | `Shared/Core-Facts/` | `protected-facts.md` |
 | แม่แบบเอกสารมาตรฐาน | `Templates/` | `Templates/<template-name>.md` |
+| ปลั๊กอินและสกิลเฉพาะทางของ Jack | `plugins/` | `plugins/<plugin-name>/` |
 
 ---
 
@@ -60,3 +61,9 @@ ai_surface: hot
 ### 6. `Templates/` (Standard Templates)
 - **หน้าที่:** แม่แบบเอกสารมาตรฐานสำหรับนำไปสร้างโน้ตใหม่
 - **สิ่งที่ควรใส่:** แม่แบบ Session, ADR, Project Brief
+
+### 7. `plugins/` (Personal Plugins Hub)
+- **หน้าที่:** ศูนย์รวมปลั๊กอินและสกิลเฉพาะทางส่วนตัวของ Jack (เช่น ปลั๊กอินธีสิส `saijai-thesis`, ปลั๊กอินวิจัย `cmru-drought`)
+- **สิ่งที่ควรใส่:** โฟลเดอร์ปลั๊กอินที่มี `plugin.json` และ `skills/`
+- **ห้ามใส่:** ไฟล์ขยะชั่วคราว หรือ node_modules ขนาดใหญ่ (ให้ใส่ใน .gitignore)
+

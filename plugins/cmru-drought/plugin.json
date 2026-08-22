@@ -1,0 +1,11 @@
+{
+  "name": "cmru-drought-plugin",
+  "version": "1.0.0",
+  "description": "ทักษะการประเมินภัยแล้งและการเขียนบทความวิจัยสำหรับ SCI-TECH CMRU Conference 2026",
+  "skills": [
+    {
+      "name": "cmru-drought-paper",
+      "description": "แนวทางระเบียบวิธีวิจัยและสไตล์ไกด์สำหรับการเขียนบทความวิจัยภัยแล้งบุรีรัมย์เป็นภาษาไทย"
+    }
+  ]
+}
